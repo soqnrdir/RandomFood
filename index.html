@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .text_box { position: relative; width: 200px; height: 200px; border:1px solid #DF0101; border-radius: 25%; text-align: center; left: 45%;} 
+    @media (max-width: 992px) {
+        .text_box { left: 30%;} 
+    }
+    .container { text-align: center; margin-top: 10%;}
+    .recommend_btn { margin-top: 15px;}
+
+    .btn_box {text-align: center; margin-top: 5px;}
+    #eat_text { margin-top: 80px; font-weight: bold; text-align: center; border: 0px; background-color: #F8E0E0; height: 50px; color: #DF0101 ;}
+    #eat_cnt {width: 50px; text-align: center;}
+    
+</style>
+<body>
+    <div class="container">
+        <h3 style="text-align: center; margin-left:5px; color: #DF0101;">EAT RANDOM FOOD!</h3>
+        <div class="text_box">
+            <input id="eat_text" type="text" readonly placeholder="What's your Eat"/>
+        </div>
+        <div class="btn_box">
+            <input id="eat_cnt" type="number" placeholder="횟수"/>
+            <button class="recommend_btn" onclick="startRandom();">start</button>
+            <button class="reset_btn" onclick="stopRandom();">reset</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var foods = ['삼겹살', '치킨', '피자', '족발', '떡볶이', '우동', '돈까스', '초밥', '짜장면', '짬뽕', 
+        '햄버거', '찜닭', '파스타', '보쌈', '닭발', '마라탕', '츄러스', '볶음밥', '쌀국수', '샌드위치', '샐러드', 
+        '아웃벡(스테이크)', '킹크랩', '순대', '김치찌개', '된장찌개', '감자탕', '타코야끼', '떡국', '칼국수', '쭈꾸미', 
+        '짜글이', '갈비찜', '회', '닭갈비', '제육볶음', '해물짜장' ,'간장or양념게장'];
+
+    var timer;
+    var cnt = 0;
+    var eat_cnt = 0;
+    function startRandom(num) {
+        if(!$('#eat_cnt').val()) {
+            alert('횟수 입력');
+            $('#eat_cnt').focus();
+            return false;
+        }
+        if(parseInt($('#eat_cnt').val()) < 0 || parseInt($('#eat_cnt').val()) == 0) {;
+            alert('0 또는 음수 입력 불가');
+            $('#eat_cnt').val("");
+            $('#eat_cnt').focus();
+            return false;
+        }
+        timer = setInterval(randoms, 1000);
+    }
+
+    function randoms() {
+        var eat_cnt = $('#eat_cnt').val();
+        if(cnt < eat_cnt) {
+            var randomValue = foods[Math.floor(Math.random() * foods.length)];
+            $('#eat_text').val(randomValue);
+            cnt++;
+        } else {
+            cnt = 0;
+            clearInterval(timer);
+            alert('Eat This!');
+        }
+    }
+
+    function stopRandom() {
+        clearInterval(timer);
+        $('#eat_cnt').val("");
+        $('#eat_text').val("");
+    }
+// 다음 업데이트 사진추가
+</script>
