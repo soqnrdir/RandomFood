@@ -23,7 +23,7 @@
             <input id="eat_text" type="text" readonly placeholder="What's your Eat"/>
         </div>
         <div class="btn_box">
-            <input id="eat_cnt" type="number" placeholder="횟수입력"/>
+            <input id="eat_cnt" type="number" placeholder="횟수"/>
             <button class="recommend_btn" onclick="startRandom();">start</button>
             <button class="reset_btn" onclick="stopRandom();">reset</button>
         </div>
@@ -46,7 +46,7 @@
             return false;
         }
         if(parseInt($('#eat_cnt').val()) < 0 || parseInt($('#eat_cnt').val()) == 0) {;
-            alert('음수 입력 불가');
+            alert('0 또는 음수 입력 불가');
             $('#eat_cnt').val("");
             $('#eat_cnt').focus();
             return false;
