@@ -45,6 +45,12 @@
             $('#eat_cnt').focus();
             return false;
         }
+        if(parseInt($('#eat_cnt').val()) < 0) {;
+            alert('음수 입력 불가');
+            $('#eat_cnt').val("");
+            $('#eat_cnt').focus();
+            return false;
+        }
         timer = setInterval(randoms, 1000);
     }
 
@@ -53,12 +59,12 @@
         if(cnt < eat_cnt) {
             var randomValue = foods[Math.floor(Math.random() * foods.length)];
             $('#eat_text').val(randomValue);
+            cnt++;
         } else {
             cnt = 0;
             clearInterval(timer);
             alert('Eat This!');
         }
-        cnt++;
     }
 
     function stopRandom() {
