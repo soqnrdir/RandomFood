@@ -59,12 +59,12 @@
         if(cnt < eat_cnt) {
             var randomValue = foods[Math.floor(Math.random() * foods.length)];
             $('#eat_text').val(randomValue);
+            cnt++;
         } else {
             cnt = 0;
             clearInterval(timer);
             alert('Eat This!');
         }
-        cnt++;
     }
 
     function stopRandom() {
