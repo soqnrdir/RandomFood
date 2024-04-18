@@ -1,34 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document</title>\
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <style>
     .text_box { position: relative; width: 200px; height: 200px; border:1px solid #DF0101; border-radius: 25%; text-align: center;  margin: 0 auto;} 
-
-    .container { text-align: center; margin-top: 10%;}
     .recommend_btn { margin-top: 15px;}
+
+    .container { text-align: center; }
 
     .btn_box {text-align: center; margin-top: 5px;}
     #eat_text { margin-top: 80px; font-weight: bold; text-align: center; border: 0px; background-color: #F8E0E0; height: 50px; color: #DF0101 ;}
     #eat_cnt {width: 50px; text-align: center;}
+
+    .chart_div { width:100%; }
+    .chart_div div { width:25%;}
+    .chart_canvas, .table { display: inline-block;}
     
 </style>
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <div class="container">
-        <h1 style="color: #DF0101;">404 page not found</h1>
-        <h3 style="text-align: center; margin-left:5px; color: #DF0101;"><a href="https://kko.to/YdVURhuptJ">누르지마세요</a></h3>
-        <h3 style="text-align: center; margin-left:5px; color: #DF0101;"><a href="https://kko.to/YdVURhuptJ">누르지마세요</a></h3>
-        <h3 style="text-align: center; margin-left:5px; color: #DF0101;"><a href="https://kko.to/YdVURhuptJ">누르지마세요</a></h3>
-        <h3 style="text-align: center; margin-left:5px; color: #DF0101;"><a href="https://kko.to/YdVURhuptJ">누르지마세요</a></h3>
-        <h3 style="text-align: center; margin-left:5px; color: #DF0101;"><a href="https://kko.to/YdVURhuptJ">누르지마세요</a></h3>
-        <h3 style="text-align: center; margin-left:5px; color: #DF0101;"><a href="https://kko.to/YdVURhuptJ">누르지마세요</a></h3>
-        <h3 style="text-align: center; margin-left:5px; color: #DF0101;"><a href="https://kko.to/YdVURhuptJ">누르지마세요</a></h3>
-        <h3 style="text-align: center; margin-left:5px; color: #DF0101;"><a href="https://kko.to/YdVURhuptJ">누르지마세요</a></h3>
-        <h3 style="text-align: center; margin-left:5px; color: #DF0101;"><a href="https://kko.to/YdVURhuptJ">누르지마세요</a></h3>
+        <h1 style="color: #DF0101">버튜버 아바타 Hair - Eyes TOP6</h1>
+        <div class="chart_div">
+            <div class="chart_canvas">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="chart_canvas">
+                <canvas id="myChart2"></canvas>
+            </div>
+            <div class="chart_canvas">
+                <canvas id="myChart3"></canvas>
+            </div>
+            <div style="margin-top: 20px;"></div>
+            <div class="chart_canvas">
+                <canvas id="myChart4"></canvas>
+            </div>
+            <div class="chart_canvas">
+                <canvas id="myChart5"></canvas>
+            </div>
+            <div class="chart_canvas">
+                <canvas id="myChart6"></canvas>
+            </div>
+        </div>
+        <table class="table" style="margin-top: 20px;">
+            <thead>
+              <tr>
+                <th scope="col">종합 순위</th>
+                <th scope="col">Hair color</th>
+                <th scope="col">Eyes color</th>
+                <th scope="col">통계 수</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1위</th>
+                <td>백발</td>
+                <td>파랑</td>
+                <td>30</td>
+              </tr>
+              <tr>
+                <th scope="row">2위</th>
+                <td>금발</td>
+                <td>파랑</td>
+                <td>18</td>
+              </tr>
+              <tr>
+                <th scope="row">3위</th>
+                <td>분홍</td>
+                <td>분홍</td>
+                <td>16</td>
+              </tr>
+              <tr>
+                <th scope="row">4위</th>
+                <td>흑발</td>
+                <td>파랑</td>
+                <td>13</td>
+              </tr>
+              <tr>
+                <th scope="row">공동 5위</th>
+                <td>백발</td>
+                <td>보라</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <th scope="row">공동 5위</th>
+                <td>분홍</td>
+                <td>파랑</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <th scope="row">6위</th>
+                <td>보라</td>
+                <td>보라</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <th scope="row">공동 7위</th>
+                <td>백발</td>
+                <td>빨강</td>
+                <td>9</td>
+              </tr>
+              <tr>
+                <th scope="row">공동 7위</th>
+                <td>파랑</td>
+                <td>파랑</td>
+                <td>9</td>
+              </tr>
+              <tr>
+                <th scope="row">공동 8위</th>
+                <td>백발</td>
+                <td>회색</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <th scope="row">공동 8위</th>
+                <td>보라</td>
+                <td>파랑</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <th scope="row">공동 8위</th>
+                <td>빨강</td>
+                <td>빨강</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <th scope="row">9위</th>
+                <td>하늘</td>
+                <td>파랑</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <th scope="row">10위</th>
+                <td>백발</td>
+                <td>분홍</td>
+                <td>6</td>
+              </tr>
+            </tbody>
+          </table>
+          
         <!-- <div class="text_box">
             <input id="eat_text" type="text" readonly placeholder="What's your Eat"/>
         </div>
@@ -41,6 +157,141 @@
 </body>
 </html>
 <script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+       labels: ['blue', 'purple', 'red', 'gray', 'pink', 'skyblue', 'black', 'orange', 'yellow', 'green', 'brown', 'yellowgreen'],
+        datasets: [{
+        data: [30, 11, 9, 8, 7, 5, 5, 2, 2, 2, 1, 1],
+        backgroundColor: ['blue', 'purple', 'red', 'gray', 'pink', 'skyblue', 'black', 'orange', 'yellow', 'green', 'brown', 'yellowgreen'],
+        borderWidth: 1
+        }]
+    },
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'TOP1 WHITE [83]'
+            }
+        }
+    }
+    });
+
+    const ctx2 = document.getElementById('myChart2');
+
+    new Chart(ctx2, {
+    type: 'doughnut',
+    data: {
+        labels: ['blue','yellow', 'red', 'pink', 'green', 'purple', 'orange', 'black', 'gray', 'navy'],
+        datasets: [{
+        data: [18, 5, 5, 4, 3, 2, 2, 2, 1, 1],
+        backgroundColor: ['blue','yellow', 'red', 'pink', 'green', 'purple', 'orange', 'black', 'gray', 'navy'],
+        borderWidth: 1
+        }]
+    },
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'TOP2 GOLDEN(금발) [43]'
+            }
+        }
+    }
+    });
+
+    const ctx3 = document.getElementById('myChart3');
+
+    new Chart(ctx3, {
+    type: 'doughnut',
+    data: {
+        labels: ['blue','purple', 'red', 'pink', 'bluegreen', 'yellowgreen', 'black', 'yellow', 'orange'],
+        datasets: [{
+        data: [13, 5, 5, 5, 4, 3,3, 2, 2],
+        backgroundColor: ['blue','purple', 'red', 'pink', '#008B8B', 'yellowgreen', 'black', 'yellow', 'orange'],
+        borderWidth: 1
+        }]
+    },
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'TOP3 BLACK [42]'
+            }
+        }
+    }
+    });
+
+    
+    const ctx4 = document.getElementById('myChart4');
+
+    new Chart(ctx4, {
+    type: 'doughnut',
+    data: {
+        labels: ['pink','blue', 'brown', 'purple', 'yellow', 'black', 'red'],
+        datasets: [{
+        data: [16, 11, 2, 1, 1, 1,1],
+        backgroundColor: ['pink','blue', 'brown', 'purple', 'yellow', 'black', 'red'],
+        borderWidth: 1
+        }]
+    },
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'TOP4 PINK [33]'
+            }
+        }
+    }
+    });
+
+    
+    const ctx5 = document.getElementById('myChart5');
+
+    new Chart(ctx5, {
+    type: 'doughnut',
+    data: {
+        labels: ['purple','blue', 'pink', 'skyblue', 'red', 'brown'],
+        datasets: [{
+        data: [10, 8, 5, 1, 1, 1],
+        backgroundColor: ['purple','blue', 'pink', 'skyblue', 'red', 'brown'],
+        borderWidth: 1
+        }]
+    },
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'TOP5 PURPLE [26]'
+            }
+        }
+    }
+    });
+
+    
+    const ctx6 = document.getElementById('myChart6');
+
+    new Chart(ctx6, {
+    type: 'doughnut',
+    data: {
+        labels: ['pink','purple', 'yellow', 'green', 'blue', 'red', 'skyblue', 'orange', 'bluegreen'],
+        datasets: [{
+        data: [3, 3, 2, 2, 2, 2, 1, 1, 1],
+        backgroundColor: ['pink','purple', 'yellow', 'green', 'blue', 'red', 'skyblue', 'orange', '#008B8B'],
+        borderWidth: 1
+        }]
+    },
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'TOP6 BEIGE [17]'
+            }
+        }
+    }
+    });
+
     // var foods = ['삼겹살', '치킨', '피자', '족발', '떡볶이', '우동', '돈까스', '초밥', '짜장면', '짬뽕', 
     //     '햄버거', '찜닭', '파스타', '보쌈', '닭발', '마라탕', '츄러스', '볶음밥', '쌀국수', '샌드위치', '샐러드', 
     //     '아웃벡(스테이크)', '킹크랩', '순대', '김치찌개', '된장찌개', '감자탕', '타코야끼', '떡국', '칼국수', '쭈꾸미', 
